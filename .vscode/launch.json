@@ -1,0 +1,17 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:3000?test1&test2=f00",
+            "webRoot": "${workspaceFolder}/client/src",
+            "trace": true,
+            "sourceMapPathOverrides": {"/*": "/__vscode-remote-uri__/*"}
+        }
+    ]
+}
