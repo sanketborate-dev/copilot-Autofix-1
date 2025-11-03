@@ -6,7 +6,7 @@ export function UnsafeRenderFunc(props) {
     return (
         <div>
             Unsafe: <div className="result" dangerouslySetInnerHTML={{ __html: props.val }} />
-            <div dangerouslySetInnerHTML={{__html: props.genericInput}}/>
+            <div>{props.genericInput}</div>
         </div>
     );
 }
