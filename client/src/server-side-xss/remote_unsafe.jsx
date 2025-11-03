@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import { MDBCard, MDBCardTitle, MDBCardText, MDBContainer } from "mdbreact";
-
+import DOMPurify from 'dompurify';
 export class RemoteUnsafe extends React.Component {
 
     constructor(props) {
@@ -27,7 +27,11 @@ export class RemoteUnsafe extends React.Component {
 
                 <Button onClick={this.onClick}>ClickMe</Button>
                 <div className="result" dangerouslySetInnerHTML={{ __html: this.state.injected }} />
-                <div dangerouslySetInnerHTML={{__html: this.props.genericInput}} />
+                <div
+                    dangerouslySetInnerHTML={{
+                        __html: DOMPurify.sanitize(this.props.genericInput)
+                    }}
+                />
             </MDBCard>
         );
     }
